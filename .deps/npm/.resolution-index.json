@@ -1,0 +1,10 @@
+{
+  "Contracts/MessageStorage.sol": {
+    "__sources__": {
+      "Contracts/MessageStorage.sol": {
+        "content": "// SPDX-License-Identifier: MIT \r\npragma solidity ^0.8.20; \r\ncontract MessageStorage { \r\nstring private message; \r\naddress public owner; \r\nevent MessageChanged( \r\naddress indexed user, \r\nstring newMessage \r\n); \r\nconstructor(string memory initialMessage) { \r\nowner = msg.sender; \r\nmessage = initialMessage; \r\n} \r\nfunction setMessage(string memory newMessage) public { \r\nmessage = newMessage; \r\nemit MessageChanged( \r\nmsg.sender, \r\nnewMessage \r\n); \r\n} \r\nfunction getMessage() public view returns (string memory) { \r\nreturn message; \r\n} \r\n}",
+        "file": "Contracts/MessageStorage.sol"
+      }
+    }
+  }
+}
